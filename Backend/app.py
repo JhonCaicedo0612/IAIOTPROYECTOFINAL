@@ -67,7 +67,36 @@ def addUser():
         else:
             return jsonify({'mensaje':"El Usuario no esta disponible"})
     except Exception as ex:
+        print(ex)
         return jsonify({'mensaje': 'Error'})
+    
+@app.route("/deleteuser", methods=['DELETE'])
+def deleteuser():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "DELETE FROM users WHERE user = '{0}'".format(request.json['user'])
+        cursor.execute(sql)
+        conexion.connection.commit()
+
+        return jsonify({'mensaje': 'Usuario eliminado correctamente'})
+
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error al eliminar el usuario'})
+
+@app.route("/updateuser", methods=['PUT'])
+def updateuser():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "UPDATE users SET name = '{0}', password='{1}', type={2} WHERE user='{3}'".format(request.json['name'],request.json['password'],request.json['type'],request.json['user'])
+        cursor.execute(sql)
+        conexion.connection.commit()
+
+        return jsonify({'mensaje': 'Usuario Modificado'})
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error al modificar el usuario'})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
