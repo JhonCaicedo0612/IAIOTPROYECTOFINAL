@@ -113,12 +113,30 @@ def datos():
             for fila in datossql:
                 datos = {"id":fila[0],"idnodo":fila[1],"accx":fila[2], "accy":fila[3], "accz":fila[4], "rotx":fila[5], "roty":fila[6], "rotz":fila[7], "pred":fila[8], "fecha":fila[9]}
                 datosop.append(datos)
-            return jsonify(datosop)
+        return jsonify(datosop)
     except Exception as ex:
         print(ex)
         return jsonify({'mensaje': 'Error traer los datos'})
 
 
+@app.route("/datosidnodo", methods=['GET'])
+
+def datosidnodo():
+    try:
+        args = request.args
+        idnodo = args.get("idnodo")
+        cursor = conexion.connection.cursor()
+        sql = f"SELECT * FROM datos WHERE idnodo = {idnodo}"
+        cursor.execute(sql)
+        datossql = cursor
+        datosop = []
+        if datossql != None:
+            for fila in datossql:
+                datos = {"id":fila[0],"idnodo":fila[1],"accx":fila[2], "accy":fila[3], "accz":fila[4], "rotx":fila[5], "roty":fila[6], "rotz":fila[7], "pred":fila[8], "fecha":fila[9]}
+                datosop.append(datos)
+        return jsonify(datosop)
+    except Exception as ex:
+        return jsonify({'mensaje':'Error'})
 
 
 if __name__ == '__main__':
