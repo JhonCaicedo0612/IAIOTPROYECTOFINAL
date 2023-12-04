@@ -39,7 +39,7 @@ def on_message(client, userdata, msg):
     roty = data["roty"]
     rotz = data["rotz"]
     pred = data["pred"]
-
+    
     with app.app_context():
         cursor = conexion.connection.cursor()
         sql = f"""INSERT INTO datos (idnodo, accx, accy, accz, rotx, roty, rotz, pred, fecha) 
@@ -50,6 +50,7 @@ def on_message(client, userdata, msg):
 @app.route("/")
 def index():
     return "Welcome"
+
 
 @app.route("/adduser", methods=['POST'])
 def addUser():
@@ -69,7 +70,8 @@ def addUser():
     except Exception as ex:
         print(ex)
         return jsonify({'mensaje': 'Error'})
-    
+
+
 @app.route("/deleteuser", methods=['DELETE'])
 def deleteuser():
     try:
@@ -84,6 +86,7 @@ def deleteuser():
         print(ex)
         return jsonify({'mensaje': 'Error al eliminar el usuario'})
 
+
 @app.route("/updateuser", methods=['PUT'])
 def updateuser():
     try:
@@ -96,6 +99,26 @@ def updateuser():
     except Exception as ex:
         print(ex)
         return jsonify({'mensaje': 'Error al modificar el usuario'})
+
+
+@app.route("/datos", methods=['GET'])
+def datos():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM datos"
+        cursor.execute(sql)
+        datossql = cursor
+        datosop = []
+        if datossql != None:
+            for fila in datossql:
+                datos = {"id":fila[0],"idnodo":fila[1],"accx":fila[2], "accy":fila[3], "accz":fila[4], "rotx":fila[5], "roty":fila[6], "rotz":fila[7], "pred":fila[8], "fecha":fila[9]}
+                datosop.append(datos)
+            return jsonify(datosop)
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error traer los datos'})
+
+
 
 
 if __name__ == '__main__':
