@@ -177,5 +177,19 @@ def crearnodo():
         print(ex)
         return jsonify({'mensaje':'Error'})
 
+@app.route("/eliminarnodo", methods=['DELETE'])
+
+def eliminarnodo():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "DELETE FROM nodos WHERE idnodo = {0}".format(request.json['idnodo'])
+        cursor.execute(sql)
+        conexion.connection.commit()
+
+        return jsonify({'mensaje': 'nodo eliminado correctamente'})
+    except Exception as ex:
+        return jsonify({'mensaje': 'Error'})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
