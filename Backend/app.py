@@ -186,10 +186,24 @@ def eliminarnodo():
         cursor.execute(sql)
         conexion.connection.commit()
 
-        return jsonify({'mensaje': 'nodo eliminado correctamente'})
+        return jsonify({'mensaje': 'Exito'})
     except Exception as ex:
         return jsonify({'mensaje': 'Error'})
 
+
+@app.route("/modificarnodo", methods=['PUT'])
+
+def modificarnodo():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "UPDATE nodos SET nombre = '{0}', ubicacion ='{1}', user='{2}', estado ='{3}' WHERE idnodo={4}".format(request.json['nombre'],request.json['ubicacion'],request.json['user'],request.json['estado'],request.json['idnodo'])
+        cursor.execute(sql)
+        conexion.connection.commit()
+
+        return jsonify({'mensaje': 'Exito'})
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error'})
 
 if __name__ == '__main__':
     app.run(debug=True)
