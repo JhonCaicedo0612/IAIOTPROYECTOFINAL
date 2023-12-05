@@ -157,6 +157,25 @@ def datosidnodo():
     except Exception as ex:
         return jsonify({'mensaje':'Error'})
 
+@app.route("/crearnodo", methods=['POST'])
+
+def crearnodo():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM nodos WHERE idnodo = {0}".format(request.json['idnodo'])
+        cursor.execute(sql)
+        datos = cursor.fetchone()
+        if datos == None:
+            cursor = conexion.connection.cursor()
+            sql = """INSERT INTO nodos (idnodo, nombre, ubicacion, user, estado) VALUES ({0}, '{1}','{2}','{3}',{4})""".format(request.json['idnodo'], request.json['nombre'], request.json['ubicacion'], request.json['user'], request.json['estado'])
+            cursor.execute(sql)
+            conexion.connection.commit()
+            return jsonify({'mensaje': "Nodo Agregado"})
+        else:
+            return jsonify({'mensaje':"El idnodo no esta disponible"})
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje':'Error'})
 
 if __name__ == '__main__':
     app.run(debug=True)
