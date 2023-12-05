@@ -50,7 +50,7 @@ if ($response === false) {
         echo '
             <script>
                 alert("Datos errados");
-                window.location ="../index.php";
+                window.location ="../login.php";
             </script>
             ';
         exit;

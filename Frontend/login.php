@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  session_destroy();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,13 +18,13 @@
         <form action="php/login_usuario_be.php" class="formulario__login" method="POST">
         <h2>Sign in</h2>
         <div class="input-box">
-        <input type="text" required />
+        <input type="text" required name="user"/>
         <i></i>
         <span>Username</span>
         
         </div>
         <div class="input-box">
-        <input type="password" required />
+        <input type="password" required name= "password"/>
         <i></i>
         <span>Password</span>
         </div>
