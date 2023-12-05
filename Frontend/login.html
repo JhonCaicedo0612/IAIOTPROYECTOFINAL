@@ -9,20 +9,24 @@
   </head>
   <body>
     <div class="box">
-      <div class="form">
+    <div class="form">
+        <form action="php/login_usuario_be.php" class="formulario__login" method="POST">
         <h2>Sign in</h2>
         <div class="input-box">
-          <input type="text" required />
-          <span>Username</span>
-          <i></i>
+        <input type="text" required />
+        <i></i>
+        <span>Username</span>
+        
         </div>
         <div class="input-box">
-          <input type="password" required />
-          <span>Password</span>
-          <i></i>
+        <input type="password" required />
+        <i></i>
+        <span>Password</span>
         </div>
-       <input type="submit" value="Login" />
-      </div>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+    
     </div>
   </body>
 </html>
