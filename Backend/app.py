@@ -56,7 +56,7 @@ def index():
 def validaruser():
     try:
         cursor = conexion.connection.cursor()
-        sql = "SELECT * FROM users WHERE user = '{0}' AND password = '{1}'".format(request.json['user'],request.json['password'])
+        sql = "SELECT * FROM users WERE user = '{0}' AND password = '{1}'".format(request.json['user'],request.json['password'])
         cursor.execute(sql)
         datossql = cursor
         datosop = []
