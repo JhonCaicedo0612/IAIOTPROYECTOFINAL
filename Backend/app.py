@@ -64,7 +64,7 @@ def validaruser():
             for fila in datossql:
                 datos = {"user":fila[0],"nombre":fila[1],"password":fila[2], "type":fila[3]}
                 datosop.append(datos)
-        return jsonify(datosop)
+            return jsonify(datosop)
 
 
     except Exception as ex:
