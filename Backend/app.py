@@ -51,6 +51,25 @@ def on_message(client, userdata, msg):
 def index():
     return "Welcome"
 
+@app.route("/validaruser", methods=['POST'])
+
+def validaruser():
+    try:
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM users WHERE user = '{0}' AND password = '{1}'".format(request.json['user'],request.json['password'])
+        cursor.execute(sql)
+        datossql = cursor
+        datosop = []
+        if datossql != None:
+            for fila in datossql:
+                datos = {"user":fila[0],"nombre":fila[1],"password":fila[2], "type":fila[3]}
+                datosop.append(datos)
+        return jsonify(datosop)
+
+
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error'})
 
 @app.route("/adduser", methods=['POST'])
 def addUser():
