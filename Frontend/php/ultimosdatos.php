@@ -79,7 +79,7 @@ $respuesta_api = curl_exec($curl);
                     <th>rot_x</th>
                     <th>rot_y</th>
                     <th>rot_z</th>
-                    <th>temperatura</th>
+                    <th>Ejercicio</th>
                     <th>fecha</th>
                 </tr>
                 <?php
