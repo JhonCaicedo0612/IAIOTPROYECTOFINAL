@@ -74,6 +74,8 @@ $respuesta_api = curl_exec($curl);
                     ?>
                     <input type="submit" name="Consultar" value="Consultar">
             </form>
+            <br>
+            
             <table border="1">
                 <tr>
                     <th>idnodo</th>

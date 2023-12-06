@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bienvenida</title>
-    <link rel="stylesheet" href="../CSS/estilospagin.css">
+    <link rel="stylesheet" href="../css/estilospagin.css">
 </head>
 <body>
     <div class="contenedor">
@@ -61,9 +61,20 @@
 
         <div class="direccionador">
             <h1>Bienvenido  <?php echo $_SESSION['usuario']; ?></h1>
-            <p>Desde esta app puedes crear, modificar y eliminar tanto usuarios como nodos.
-                tambien se puede realizar el monitoreo de los ejercicios realizados por los usuarios
+            <p>¡Saludos, Como administrador de nuestra comunidad de fitness,
+             tienes un papel vital en la gestión y promoción de un estilo de vida activo y saludable.
+             Desde este panel, tendrás acceso a herramientas y funciones exclusivas para supervisar y mejorar 
+             la experiencia de nuestros usuarios.
+             Utiliza las opciones de administrador para gestionar perfiles de usuarios, monitorear el rendimiento de la comunidad y garantizar que cada miembro obtenga el máximo beneficio de nuestra plataforma.
+             <h2>¡Tu contribución es fundamental para mantener nuestra comunidad en forma y en movimiento!</h2>
             </p>
+            <br>
+            <br>
+            <center>
+            <img src="../assests/img/monitoreoentre.jpg" alt="Monitoreo de datos">
+            </center>
+            <br>
+            <br>
         </div>
     </div>
     

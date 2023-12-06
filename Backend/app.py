@@ -321,6 +321,8 @@ def consultarnodouser():
     except Exception as ex:
         print(ex)
         return jsonify({'mensaje': 'Error'})
+
+
     
 if __name__ == '__main__':
     app.run(debug=True)

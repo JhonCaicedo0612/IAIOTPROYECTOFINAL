@@ -20,12 +20,15 @@ body{
     max-width: 1200px;
     margin: auto;
     position: relative;
+    justify-content: center;
+   
 }
 .barra{
     margin-top: 10px;
     background-color: rgba(0, 128, 255, 0.5);
     align-items: center;
     position: relative;
+    
 }
 
 .barra div{
@@ -158,7 +161,6 @@ table {
     font-size: 10px;
     table-layout: fixed;
     border-collapse: collapse;
-    align: center;
 }
 
 

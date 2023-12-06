@@ -59,7 +59,11 @@ if ($_SESSION['tipo'] == 2) {
             </button>
         </div>
         <div class="consulta">
+            <br>
+            <br>
             <h1>Consultar Nodos</h1>
+            <br>
+            <br>
             <center>
                 <table class="table">
                     <thead>
@@ -130,6 +134,8 @@ if ($_SESSION['tipo'] == 2) {
                 <br>
                 <br>
                 <h1>Crear Usuarios</h1>
+                <br>
+                <br>
                 <table class="table">
                     <thead>
                         <tr>

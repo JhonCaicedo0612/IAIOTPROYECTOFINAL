@@ -61,6 +61,7 @@ $respuesta_api = curl_exec($curl);
                         ?>
             </button>
         </div>
+        
         <div class="consulta">
             <h1>Consulta tus Nodos</h1>
             <form method="post" action="">
@@ -82,6 +83,8 @@ $respuesta_api = curl_exec($curl);
                     <input type="date" name="final" value="" />
                     <input type="submit" name="Consultar" value="Consultar">
             </form>
+            <br>
+            <br>
             <table border="1">
                 <tr>
                     <th>idnodo</th>
