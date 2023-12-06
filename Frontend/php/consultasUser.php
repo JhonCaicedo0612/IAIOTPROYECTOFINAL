@@ -21,7 +21,7 @@
         die();
     } 
 
-    $url = "http://127.0.0.1:1880/ConsultarNodoUser?user=".$_SESSION['usuario'];
+    $url = "http://127.0.0.1:5000/consultarnodouser?user=".$_SESSION['usuario'];
     $curl = curl_init($url);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -73,6 +73,7 @@
                 </form>
                 <table border="1">
                     <tr>
+                        <br>
                         <th>idnodo</th>
                         <th>ac_x</th>
                         <th>ac_y</th>
@@ -80,7 +81,7 @@
                         <th>rot_x</th>
                         <th>rot_y</th>
                         <th>rot_z</th>
-                        <th>temperatura</th>
+                        <th>Ejercicio</th>
                         <th>fecha</th>
                     </tr>
                     <?php
@@ -107,13 +108,13 @@
                                         foreach ($datos as $dato) {
                                             echo '<tr>';
                                             echo '<td>' . $dato['idnodo'] . '</td>';
-                                            echo '<td>' . $dato['ac_x'] . '</td>';
-                                            echo '<td>' . $dato['ac_y'] . '</td>';
-                                            echo '<td>' . $dato['ac_z'] . '</td>';
-                                            echo '<td>' . $dato['rot_x'] . '</td>';
-                                            echo '<td>' . $dato['rot_y'] . '</td>';
-                                            echo '<td>' . $dato['rot_z'] . '</td>';
-                                            echo '<td>' . $dato['temperatura'] . '</td>';
+                                            echo '<td>' . $dato['accx'] . '</td>';
+                                            echo '<td>' . $dato['accy'] . '</td>';
+                                            echo '<td>' . $dato['accz'] . '</td>';
+                                            echo '<td>' . $dato['rotx'] . '</td>';
+                                            echo '<td>' . $dato['roty'] . '</td>';
+                                            echo '<td>' . $dato['rotz'] . '</td>';
+                                            echo '<td>' . $dato['pred'] . '</td>';
                                             echo '<td>' . $dato['fecha'] . '</td>';
                                             echo '</tr>';
                                         }
@@ -124,7 +125,7 @@
                             } else{
                             // Consulta SQL para obtener los datos
                                 if ($texto !=""){
-                                    $url2 = "http://127.0.0.1:1880/datos-idnodo?idnodo=".$texto;
+                                    $url2 = "http://127.0.0.1:5000/datosidnodo?idnodo=".$texto;
                                     $curl2 = curl_init($url2);
                                     curl_setopt($curl2, CURLOPT_RETURNTRANSFER, true);
                                     $respuesta_api2 = curl_exec($curl2);
@@ -137,13 +138,13 @@
                                         foreach ($datos as $dato) {
                                             echo '<tr>';
                                             echo '<td>' . $dato['idnodo'] . '</td>';
-                                            echo '<td>' . $dato['ac_x'] . '</td>';
-                                            echo '<td>' . $dato['ac_y'] . '</td>';
-                                            echo '<td>' . $dato['ac_z'] . '</td>';
-                                            echo '<td>' . $dato['rot_x'] . '</td>';
-                                            echo '<td>' . $dato['rot_y'] . '</td>';
-                                            echo '<td>' . $dato['rot_z'] . '</td>';
-                                            echo '<td>' . $dato['temperatura'] . '</td>';
+                                            echo '<td>' . $dato['accx'] . '</td>';
+                                            echo '<td>' . $dato['accy'] . '</td>';
+                                            echo '<td>' . $dato['accz'] . '</td>';
+                                            echo '<td>' . $dato['rotx'] . '</td>';
+                                            echo '<td>' . $dato['roty'] . '</td>';
+                                            echo '<td>' . $dato['rotz'] . '</td>';
+                                            echo '<td>' . $dato['pred'] . '</td>';
                                             echo '<td>' . $dato['fecha'] . '</td>';
                                             echo '</tr>';
                                         }
@@ -157,6 +158,7 @@
                         }
                     ?>
                 </table>
+                <br>
             </div>
         </div>
     </body>

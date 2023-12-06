@@ -20,7 +20,7 @@ if ($_SESSION['tipo'] == 1) {
         ';
     die();
 }
-$url = "http://127.0.0.1:1880/ConsultarNodoUser?user=" . $_SESSION['usuario'];
+$url = "http://127.0.0.1:5000/consultarnodouser?user=" . $_SESSION['usuario'];
 $curl = curl_init($url);
 
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -68,6 +68,8 @@ $respuesta_api = curl_exec($curl);
                     ?>
                     <input type="submit" name="Consultar" value="Consultar">
             </form>
+            <br>
+            <br>
             <table border="1">
                 <tr>
                     <th>idnodo</th>
@@ -87,7 +89,7 @@ $respuesta_api = curl_exec($curl);
 
                     // Consulta SQL para obtener los datos
                     if ($texto != "") {
-                        $url2 = "http://127.0.0.1:1880/datos-idnodo-ult?idnodo=" . $texto;
+                        $url2 = "http://127.0.0.1:5000/datosidenodoultimo?idnodo=" . $texto;
                         $curl2 = curl_init($url2);
                         curl_setopt($curl2, CURLOPT_RETURNTRANSFER, true);
                         $respuesta_api2 = curl_exec($curl2);
@@ -100,14 +102,15 @@ $respuesta_api = curl_exec($curl);
                             foreach ($datos as $dato) {
                                 echo '<tr>';
                                 echo '<td>' . $dato['idnodo'] . '</td>';
-                                echo '<td>' . $dato['ac_x'] . '</td>';
-                                echo '<td>' . $dato['ac_y'] . '</td>';
-                                echo '<td>' . $dato['ac_z'] . '</td>';
-                                echo '<td>' . $dato['rot_x'] . '</td>';
-                                echo '<td>' . $dato['rot_y'] . '</td>';
-                                echo '<td>' . $dato['rot_z'] . '</td>';
-                                echo '<td>' . $dato['temperatura'] . '</td>';
+                                echo '<td>' . $dato['accx'] . '</td>';
+                                echo '<td>' . $dato['accy'] . '</td>';
+                                echo '<td>' . $dato['accz'] . '</td>';
+                                echo '<td>' . $dato['rotx'] . '</td>';
+                                echo '<td>' . $dato['roty'] . '</td>';
+                                echo '<td>' . $dato['rotz'] . '</td>';
+                                echo '<td>' . $dato['pred'] . '</td>';
                                 echo '<td>' . $dato['fecha'] . '</td>';
+                                echo '</tr>';
                                 echo '</tr>';
                                 echo '<tr>';
                                 echo '<td> Graficas </td>';
@@ -128,6 +131,8 @@ $respuesta_api = curl_exec($curl);
                 }
                 ?>
             </table>
+            <br>
+            <br>
         </div>
     </div>
 </body>

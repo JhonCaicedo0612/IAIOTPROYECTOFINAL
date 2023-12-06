@@ -158,6 +158,7 @@ table {
     font-size: 10px;
     table-layout: fixed;
     border-collapse: collapse;
+    align: center;
 }
 
 
