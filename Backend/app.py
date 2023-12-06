@@ -175,6 +175,26 @@ def datosidnodo():
     except Exception as ex:
         return jsonify({'mensaje':'Error'})
 
+@app.route("/datosidenodoultimo", methods=['GET'])
+def datosidnodoultimo():
+    try:
+        args = request.args
+        idnodo = args.get("idnodo")
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM datos WHERE idnodo = %s ORDER BY id DESC LIMIT 1"
+        cursor.execute(sql, (idnodo,))
+        fila = cursor.fetchone()
+        datosop = []
+
+        if fila is not None:
+            datos = {"id": fila[0], "idnodo": fila[1], "accx": fila[2], "accy": fila[3], "accz": fila[4],
+                    "rotx": fila[5], "roty": fila[6], "rotz": fila[7], "pred": fila[8], "fecha": fila[9]}
+            datosop.append(datos)
+
+        return jsonify(datosop)
+    except Exception as ex:
+        return jsonify({'mensaje': 'Error'})
+
 @app.route("/crearnodo", methods=['POST'])
 
 def crearnodo():
