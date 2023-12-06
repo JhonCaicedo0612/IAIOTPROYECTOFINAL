@@ -75,7 +75,7 @@ if ($_SESSION['tipo'] == 2) {
                     </thead>
                     <tbody>
                         <?php
-                        $servurl = "http://127.0.0.1:1880/consultarnodo";
+                        $servurl = "http://127.0.0.1:5000/consultarNodo";
                         $curl = curl_init($servurl);
 
                         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

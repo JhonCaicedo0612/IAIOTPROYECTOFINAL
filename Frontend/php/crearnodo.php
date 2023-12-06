@@ -29,7 +29,7 @@ $ubicacion = $_POST["ubicacion"];
 $user = $_POST["user"];
 $estado = $_POST["estado"];
 
-$servurl = "http://localhost:1880/consultarNodo";
+$servurl = "http://localhost:5000/consultarNodo";
 $curl = curl_init($servurl);
 
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -66,7 +66,7 @@ if ($cont >= 1) {
     die();
 } else {
     // URL de la solicitud POST
-    $url = 'http://127.0.0.1:1880/crearNodo';
+    $url = 'http://127.0.0.1:5000/crearnodo';
 
 
     // Datos que se enviarán en la solicitud POST
