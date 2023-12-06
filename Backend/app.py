@@ -263,7 +263,7 @@ def modificarnodo():
         print(ex)
         return jsonify({'mensaje': 'Error'})
 
-@app.route("/consultarNodo")
+@app.route("/consultarNodo", methods=['GET'])
 
 def consultarnodo():
     try:
@@ -281,7 +281,7 @@ def consultarnodo():
         print(ex)
         return jsonify({'mensaje': 'Error'})
 
-@app.route("/consultarnodoid")
+@app.route("/consultarnodoid", methods=['GET'])
 
 def consultarnodoid():
     try:
@@ -299,6 +299,27 @@ def consultarnodoid():
 
         return jsonify(datosop)
     except Exception as ex:
-        return
+        print(ex)
+        return jsonify({'mensaje': 'Error'})
+
+@app.route("/consultarnodouser", methods=['GET'])
+
+def consultarnodouser():
+    try:
+        args = request.args
+        user = args.get("user")
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM nodos WHERE user ='{0}'".format(user)
+        cursor.execute(sql)
+        datossql = cursor
+        datosop = []
+        if datossql != None:
+            for fila in datossql:
+                datos = {"idnodo":fila[0],"nombre":fila[1], "ubicacion":fila[2], "user":fila[3], "estado":fila[4]}
+                datosop.append(datos)
+        return jsonify(datosop)
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error'})
 if __name__ == '__main__':
     app.run(debug=True)
