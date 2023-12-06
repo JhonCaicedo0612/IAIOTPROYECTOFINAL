@@ -13,7 +13,7 @@ $datosUsuario = [
 $datosJSON = json_encode($datosUsuario);
 
 // Configurar la URL de la API
-$api_url = 'http://127.0.0.1:1880/validarUser';
+$api_url = 'http://127.0.0.1:5000/validaruser';
 
 // Configurar las opciones de la solicitud cURL
 $ch = curl_init($api_url);
@@ -49,7 +49,7 @@ if ($response === false) {
         echo '
             <script>
                 alert("Datos errados");
-                window.location ="../index.php";
+                window.location ="../login.php";
             </script>
             ';
         exit;
