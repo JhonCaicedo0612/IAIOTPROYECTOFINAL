@@ -24,15 +24,13 @@ if ($_SESSION['tipo'] == 1) {
     die();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bienvenida</title>
+    <title>Cliente</title>
     <link rel="stylesheet" href="../CSS/estilospagin.css">
 </head>
 
@@ -58,11 +56,22 @@ if ($_SESSION['tipo'] == 1) {
 
         <div class="direccionador">
             <h1>Bienvenido <?php echo $_SESSION['usuario']; ?></h1>
-            <p>Desde esta app puedes consular el estado de todos tus nodos,
-                para poder realizar esto debes seleccionar entre tus nodos y
-                obtendras los ultimos datos de ese nodo
+            <p>  Este es tu destino principal para el fitness y el bienestar personalizado.
+                 Somos más que una plataforma de ejercicios; somos tu compañero de confianza en tu 
+                 viaje hacia un estilo de vida activo y saludable; Con nuestra función de monitoreo en tiempo real, 
+                 podrás ver tus datos de ejercicio al instante, mantenemos un registro detallado para que 
+                 puedas seguir tu evolución día a día.
             </p>
+            <br>
+            <br>
+            <center>
+            <img src="../assests/img/monitoreo.jpg" alt="Monitoreo de datos">
+            </center>
+            <br>
+            <br>
+        
         </div>
+     
     </div>
 
 </body>
