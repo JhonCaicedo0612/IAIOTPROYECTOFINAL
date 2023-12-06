@@ -35,10 +35,10 @@ if ($response === false) {
     if (!empty($data) && is_array($data)) {
         // Verificar si la respuesta contiene datos válidos y guardarlos en la sesión
         $_SESSION['usuario'] = $data[0]['user'];
-        $_SESSION['tipo'] = $data[0]['tipo'];
+        $_SESSION['tipo'] = $data[0]['type'];
 
         // Redirigir al usuario a otra página
-        if ($data[0]['tipo'] == 2) {
+        if ($data[0]['type'] == 2) {
             header('Location: bienvenidoUser.php');
             exit();
         } else {

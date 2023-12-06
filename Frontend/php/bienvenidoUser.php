@@ -33,7 +33,7 @@ if ($_SESSION['tipo'] == 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bienvenida</title>
-    <link rel="stylesheet" href="../assests/CSS/estilospagina.css">
+    <link rel="stylesheet" href="../CSS/estilospagin.css">
 </head>
 
 <body>

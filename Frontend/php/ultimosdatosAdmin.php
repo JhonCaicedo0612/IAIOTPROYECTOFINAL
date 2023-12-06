@@ -31,7 +31,7 @@ $respuesta_api = curl_exec($curl);
 
 <head>
     <title>Consultas</title>
-    <link rel="stylesheet" href="../assests/CSS/estilospagina.css">
+    <link rel="stylesheet" href="../CSS/estilospagin.css">
 </head>
 
 <body>
