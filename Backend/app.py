@@ -71,6 +71,26 @@ def validaruser():
         print(ex)
         return jsonify({'mensaje': 'Error'})
 
+@app.route("/filtrousuario", methods=['GET'])
+
+def filtrousuario():
+    try:
+        args = request.args
+        user = args.get("user")
+        cursor = conexion.connection.cursor()
+        sql = "SELECT * FROM users WHERE user = %s"
+        cursor.execute(sql, (user,))
+        fila = cursor.fetchone()
+        datosop = []
+
+        if fila is not None:
+            datos = {'user':fila[0],'name':fila[1],'password':fila[2],'type':fila[3]}
+            datosop.append(datos)
+
+        return jsonify(datosop)
+    except Exception as ex:
+        return jsonify({'mensaje': 'Error'})
+
 @app.route("/consultarusers", methods=['GET'])
 
 def consultarUsers():
