@@ -74,7 +74,7 @@ if ($_SESSION['tipo'] == 2) {
                     </thead>
                     <tbody>
                         <?php
-                        $servurl = "http://localhost:1880/usuario";
+                        $servurl = "http://localhost:5000/consultarusers";
                         $curl = curl_init($servurl);
 
                         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -90,10 +90,10 @@ if ($_SESSION['tipo'] == 2) {
                         $long = count($resp);
                         for ($i = 0; $i < $long; $i++) {
                             $dec = $resp[$i];
-                            $nombre = $dec->nombre;
+                            $nombre = $dec->name;
                             $usuario = $dec->user;
                             $password = $dec->password;
-                            $tipo = $dec->tipo;
+                            $tipo = $dec->type;
                         ?>
 
                             <tr>

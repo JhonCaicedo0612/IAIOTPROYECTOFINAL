@@ -4,7 +4,7 @@ $usuario = $_POST["usuario"];
 
 
 // URL de la solicitud POST
-$url = "http://localhost:1880/deleteUser";
+$url = "http://localhost:5000/deleteuser";
 
 // Datos que se enviarán en la solicitud POST
 $data = array(

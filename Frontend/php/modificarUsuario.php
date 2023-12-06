@@ -6,14 +6,14 @@ $tipo = $_POST["tipo"];
 
 
 // URL de la solicitud POST
-$url = "http://localhost:1880/modificarUser";
+$url = "http://localhost:5000/updateuser";
 
 // Datos que se enviarán en la solicitud POST
 $data = array(
     'user' => $usuario,
-    'nombre' => $nombre,
+    'name' => $nombre,
     'password' => $pass,
-    'tipo' => $tipo,
+    'type' => $tipo,
 );
 
 

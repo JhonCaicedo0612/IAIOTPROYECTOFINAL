@@ -62,6 +62,7 @@
         <div class="direccionador">
             <h1>Bienvenido  <?php echo $_SESSION['usuario']; ?></h1>
             <p>Desde esta app puedes crear, modificar y eliminar tanto usuarios como nodos.
+                tambien se puede realizar el monitoreo de los ejercicios realizados por los usuarios
             </p>
         </div>
     </div>

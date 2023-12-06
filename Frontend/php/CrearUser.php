@@ -29,7 +29,7 @@ $usuario = $_POST["usuario"];
 $pass = $_POST["password"];
 $tipo = $_POST["tipo"];
 
-$servurl = "http://localhost:1880/usuario";
+$servurl = "http://localhost:5000/consultarusers";
 $curl = curl_init($servurl);
 
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -66,15 +66,15 @@ if ($cont >= 1) {
     die();
 } else {
     // URL de la solicitud POST
-    $url = 'http://127.0.0.1:1880/createUser';
+    $url = 'http://127.0.0.1:5000/adduser';
 
 
     // Datos que se enviarán en la solicitud POST
     $data = array(
-        'nombre' => $nombre,
+        'name' => $nombre,
         'user' => $usuario,
         'password' => $pass,
-        'tipo' => $tipo,
+        'type' => $tipo,
     );
     $json_data = json_encode($data);
 
