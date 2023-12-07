@@ -120,13 +120,13 @@ $respuesta_api = curl_exec($curl);
                                 echo '</tr>';
                                 echo '<tr>';
                                 echo '<td> Graficas </td>';
-                                echo '<td> <a href="grafica.php?tipo=acx&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
-                                echo '<td> <a href="grafica.php?tipo=acy&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
-                                echo '<td> <a href="grafica.php?tipo=acz&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
+                                echo '<td> <a href="grafica.php?tipo=accx&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
+                                echo '<td> <a href="grafica.php?tipo=accy&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
+                                echo '<td> <a href="grafica.php?tipo=accz&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="grafica.php?tipo=rotx&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="grafica.php?tipo=roty&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="grafica.php?tipo=rotz&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
-                                echo '<td>  </td>';
+                                echo '<td> <a href="grafica.php?tipo=pred&nodo=' . $texto . '"> <button>Ver grafica</button>  </td>';
                                 echo '<td>  </td>';
                                 echo '</tr>';
                             }
