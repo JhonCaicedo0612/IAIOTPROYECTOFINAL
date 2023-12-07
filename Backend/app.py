@@ -220,6 +220,29 @@ def datosidnodoultimo():
     except Exception as ex:
         return jsonify({'mensaje': 'Error'})
 
+@app.route("/datos-rangfecha", methods=['GET'])
+
+def rangofecha():
+    try:
+        args = request.args
+        idnodo = args.get("idnodo")
+        fechai = args.get("fechai")
+        fechaf = args.get("fechaf")
+        cursor = conexion.connection.cursor()
+        sql = f"SELECT * FROM datos WHERE idnodo = {idnodo} and fecha BETWEEN '{fechai}' AND '{fechaf}' ORDER BY id DESC"
+        cursor.execute(sql)
+        datossql = cursor
+        datosop = []
+        if datossql != None:
+            for fila in datossql:
+                datos = {"id":fila[0],"idnodo":fila[1],"accx":fila[2], "accy":fila[3], "accz":fila[4], "rotx":fila[5], "roty":fila[6], "rotz":fila[7], "pred":fila[8], "fecha":fila[9]}
+                datosop.append(datos)
+        return jsonify(datosop)
+
+    except Exception as ex:
+        print(ex)
+        return jsonify({'mensaje': 'Error'})
+
 @app.route("/crearnodo", methods=['POST'])
 
 def crearnodo():

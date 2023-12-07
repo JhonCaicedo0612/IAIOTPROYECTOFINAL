@@ -95,7 +95,7 @@
                                     echo "La fecha inicial no puede ser menor que la final";
                                     exit();
                                 }else{
-                                    $url2 = "http://127.0.0.1:1880/datos-rangfecha?idnodo=".$texto."&fechai=".$inicial."&fechaf=".$final;
+                                    $url2 = "http://127.0.0.1:5000/datos-rangfecha?idnodo=".$texto."&fechai=".$inicial."&fechaf=".$final;
                                     $curl2 = curl_init($url2);
                                     curl_setopt($curl2, CURLOPT_RETURNTRANSFER, true);
                                     $respuesta_api2 = curl_exec($curl2);
