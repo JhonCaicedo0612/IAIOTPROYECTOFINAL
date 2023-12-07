@@ -126,7 +126,7 @@ $respuesta_api = curl_exec($curl);
                                 echo '<td> <a href="grafica.php?tipo=rotx&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="grafica.php?tipo=roty&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="grafica.php?tipo=rotz&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
-                                echo '<td> <a href="grafica.php?tipo=pred&nodo=' . $texto . '"> <button>Ver grafica</button>  </td>';
+                                echo '<td> </td>';
                                 echo '<td>  </td>';
                                 echo '</tr>';
                             }
