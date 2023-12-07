@@ -11,6 +11,7 @@ if (!isset($_SESSION['usuario'])) {
     session_destroy();
     die();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -53,13 +54,13 @@ if (!isset($_SESSION['usuario'])) {
                 const nodo = urlSearchParams.get("nodo");
                 console.log("El tipo es:", tipo);
                 switch (tipo) {
-                    case "acx":
+                    case "accx":
                         titulo = "Aceleración en X";
                         break;
-                    case "acy":
+                    case "accy":
                         titulo = "Aceleración en Y";
                         break;
-                    case "acz":
+                    case "accz":
                         titulo = "Aceleración en Z";
                         break;
                     case "rotx":
@@ -71,11 +72,11 @@ if (!isset($_SESSION['usuario'])) {
                     case "rotz":
                         titulo = "Rotación en Z";
                         break;
-                    case "temp":
-                        titulo = "Temperatura";
+                    case "pred":
+                        titulo = "pred";
                         break;
                 }
-                const url = `http://localhost:1880/datos-idnodo?idnodo=${nodo}`;
+                const url = `http://localhost:5000/datosidnodo?idnodo=${nodo}`;
                 fetch(url).then(response => response.json()).then(data => {
                     const $grafica = document.querySelector("#grafica");
                     const etiquetas = [];
@@ -89,26 +90,26 @@ if (!isset($_SESSION['usuario'])) {
                     for (let i = 0; i < data.length; i++) {
                         etiquetas.push(data[i].fecha);
                         switch (tipo) {
-                            case "acx":
-                                datos.data.push(data[i].ac_x);
+                            case "accx":
+                                datos.data.push(data[i].accx);
                                 break;
-                            case "acy":
-                                datos.data.push(data[i].ac_y);
+                            case "accy":
+                                datos.data.push(data[i].accy);
                                 break;
-                            case "acz":
-                                datos.data.push(data[i].ac_z);
+                            case "accz":
+                                datos.data.push(data[i].accz);
                                 break;
                             case "rotx":
-                                datos.data.push(data[i].rot_x);
+                                datos.data.push(data[i].rotx);
                                 break;
                             case "roty":
-                                datos.data.push(data[i].rot_y);
+                                datos.data.push(data[i].roty);
                                 break;
                             case "rotz":
-                                datos.data.push(data[i].rot_z);
+                                datos.data.push(data[i].rotz);
                                 break;
-                            case "temp":
-                                datos.data.push(data[i].temperatura);
+                            case "pred":
+                                datos.data.push(data[i].pred);
                                 break;
                         }
                     }

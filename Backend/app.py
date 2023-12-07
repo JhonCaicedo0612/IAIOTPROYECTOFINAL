@@ -2,11 +2,16 @@ from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
 from flask_mqtt import Mqtt
 from dotenv import load_dotenv
+from flask_cors import CORS
+
+
 
 import os
 import json
 
 app = Flask(__name__)
+CORS(app, resources={r"/datosidnodo": {"origins": "http://localhost"}})
+
 
 load_dotenv()
 app.config['MYSQL_HOST'] = os.environ["MYSQL_HOST"]
