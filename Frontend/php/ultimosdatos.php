@@ -120,7 +120,7 @@ $respuesta_api = curl_exec($curl);
                                 echo '<td> <a href="graficauser.php?tipo=rotx&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="graficauser.php?tipo=roty&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td> <a href="graficauser.php?tipo=rotz&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
-                                echo '<td> <a href="graficauser.php?tipo=temp&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
+                                echo '<td> <a href="graficauser.php?tipo=pred&nodo=' . $texto . '"> <button>Ver grafica</button> </td>';
                                 echo '<td>  </td>';
                                 echo '</tr>';
                             }
