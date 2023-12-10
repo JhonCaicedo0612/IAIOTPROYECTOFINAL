@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearNodoActivity">
+
+    <TextView
+        android:id="@+id/labelIdNodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Nodo:" />
+
+    <EditText
+        android:id="@+id/editTextIdNodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelIdNodo"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/labelNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextIdNodo"
+        android:layout_marginTop="16dp"
+        android:text="Nombre:" />
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelNombre"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/labelUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNombre"
+        android:layout_marginTop="16dp"
+        android:text="Ubicación:" />
+
+    <EditText
+        android:id="@+id/editTextUbicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelUbicacion"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/labelUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUbicacion"
+        android:layout_marginTop="16dp"
+        android:text="Usuario:" />
+
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelUser"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/labelEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUser"
+        android:layout_marginTop="16dp"
+        android:text="Estado:" />
+
+    <EditText
+        android:id="@+id/editTextEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelEstado"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnCrearNodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEstado"
+        android:layout_marginTop="16dp"
+        android:text="Crear Nodo" />
+
+    <Button
+        android:id="@+id/btnvolver"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEstado"
+        android:layout_marginTop="70dp"
+        android:text="Volver" />
+
+</RelativeLayout>
